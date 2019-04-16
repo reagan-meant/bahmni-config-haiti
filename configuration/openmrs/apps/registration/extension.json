@@ -47,7 +47,7 @@
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "HSC_Vital Signs Form",
+            "conceptName": "Vitals",
             "translationKey": "VITAL_SIGNS"
         },
         "order": 1,
