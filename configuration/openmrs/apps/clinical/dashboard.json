@@ -27,19 +27,6 @@
                 "showDetailsButton":true,
                 "displayOrder":1
             },
-            "navigationLinksControl":{
-                "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
-                "type":"navigationLinksControl",
-                "displayOrder":2,
-                "showLinks":[
-                    "home",
-                    "visit",
-                    "registration",
-                    "inpatient",
-                    "enrolment",
-                    "visitAttribute"
-                ]
-            },
             "treatments":{
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type":"treatment",
@@ -274,16 +261,6 @@
                     }
                 }
             },
-            "echoStudy": {
-                "type": "forms",
-                "displayOrder": 15,
-                "dashboardConfig": {
-                    "title": null,
-                    "maximumNoOfVisits": 10
-                },
-                "formGroup": ["GHC_Echo Study Form"],
-                "translationKey": "DASHBOARD_TITLE_ECHO_STUDY_KEY"
-            },
             "communitySurvey": {
                 "type": "forms",
                 "displayOrder": 16,
@@ -402,7 +379,7 @@
                     "yAxisConcepts":[
                         "Height"
                     ],
-                    "referenceData":"heightForAge2_20Years.csv",
+                    "referenceData":"charts/heightForAge2_20Years.csv",
                     "numberOfVisits":20
                 },
                 "displayOrder":30
@@ -414,7 +391,7 @@
                     "yAxisConcepts":[
                         "Height"
                     ],
-                    "referenceData":"lengthForAge0_36Months.csv",
+                    "referenceData":"charts/lengthForAge0_36Months.csv",
                     "numberOfVisits":20
                 },
                 "displayOrder":31
@@ -426,7 +403,7 @@
                     "yAxisConcepts":[
                         "head circumference"
                     ],
-                    "referenceData":"headCircumferencePerAge0_36Months.csv",
+                    "referenceData":"charts/headCircumferencePerAge0_36Months.csv",
                     "numberOfVisits":20
                 },
                 "displayOrder":34
@@ -438,7 +415,7 @@
                     "yAxisConcepts":[
                         "Weight"
                     ],
-                    "referenceData":"weightForAge0_36Months.csv",
+                    "referenceData":"charts/weightForAge0_36Months.csv",
                     "numberOfVisits":20
                 },
                 "displayOrder":32
@@ -450,7 +427,7 @@
                     "yAxisConcepts":[
                         "Weight"
                     ],
-                    "referenceData":"weightForAge2_20Years.csv",
+                    "referenceData":"charts/weightForAge2_20Years.csv",
                     "numberOfVisits":20
                 },
                 "displayOrder":33

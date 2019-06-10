@@ -1,0 +1,18 @@
+{
+  "homePage": {
+    "header_text": "<b>WELCOME TO<br />BAHMNI EMR & HOSPITAL SERVICE",
+    "logo": "/bahmni/images/bahmniLogoFull.png",
+    "title_text": " "
+  },
+  "loginPage": {
+    "logo": "/bahmni_config/openmrs/apps/home/Haiti_logo.png",
+    "showHeaderText": true,
+    "showTitleText": false,
+    "bottomLogos": [
+      "/bahmni_config/openmrs/apps/home/MKS_logo.png"
+    ]
+  },
+  "helpLink": {
+    "url": "https://bahmni.atlassian.net/wiki/display/BAH/Bahmni+Home"
+  }
+}
