@@ -36,18 +36,18 @@
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "HSC_Triage information",
+            "conceptName": "Haiti_Triage information",
             "translationKey": "TRIAGE_INFORMATION"
         },
         "order": 2,
         "requiredPrivilege": "Edit Visits"
     },
-    "triageSigns":{
+    "vitalSigns":{
         "id": "bahmni.registration.conceptSetGroup.vitalSigns",
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "Vitals",
+            "conceptName": "Haiti_Vital Signs Form",
             "translationKey": "VITAL_SIGNS"
         },
         "order": 1,
