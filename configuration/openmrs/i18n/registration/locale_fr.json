@@ -74,7 +74,7 @@
   "REGISTRATION_LABEL_BACK":"Retour (<u>b</u>)",
   "REGISTRATION_LABEL_ENTER_VISIT":"Details de la <u>V</u>isite",
   "REGISTRATION_TITLE_ADDITIONAL_PATIENT":"Information supplémentaires",
-  "REGISTRATION_TITLE_RELATIONSHIPS":"Relations",
+  "REGISTRATION_TITLE_RELATIONSHIPS":"Liens de parenté",
   "REGISTRATION_CONTENT_ENTERING_ID":"Vous entrez un numéro patient qui est ultérieur à la séquence définie. Cela va créer un saut dans la numérotation des patients. Voulez-vous continuer?",
   "REGISTRATION_LABEL_SAVED" : "Enregistré",
   "REGISTRATION_NO_RESULTS_FOUND":"Aucun résultat trouvé",
