@@ -29,41 +29,5 @@ Bahmni.ConceptSet.FormConditions.rules = {
                 enable: ["Posture"]
             };
         } else {}
-    },
-    'GHC_Other actions': function (formName, formFieldValues) {
-        var answer = formFieldValues['GHC_Other actions'];
-        if (answer) {
-            return {
-                show: ['GHC_Non coded actions']
-            };
-        } else {
-            return {
-                hide: ['GHC_Non coded actions']
-            };
-        }
-    },
-    'GHC_Ulcerations': function (formName, formFieldValues) {
-        var answer = formFieldValues['GHC_Ulcerations'];
-        if (answer) {
-            return {
-                show: ['GHC_Ulcerations location']
-            };
-        } else {
-            return {
-                hide: ['GHC_Ulcerations location']
-            };
-        }
-    },
-    'GHC_Vesicles': function (formName, formFieldValues) {
-        var answer = formFieldValues['GHC_Vesicles'];
-        if (answer) {
-            return {
-                show: ['GHC_Vesicles location']
-            };
-        } else {
-            return {
-                hide: ['GHC_Vesicles location']
-            };
-        }
     }
 };

@@ -107,18 +107,6 @@
     "order": 4,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalPatientsSearchAllPatients": {
-    "id": "bahmni.clinical.patients.search.allPatients",
-    "extensionPointId": "org.bahmni.patient.search",
-    "type": "config",
-    "extensionParams": {
-      "translationKey": "MODULE_LABEL_ALL_KEY",
-      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
-    },
-    "label": "All",
-    "order": 7,
-    "requiredPrivilege": "app:clinical"
-  },
   "bahmniClinicalConceptSetGroupObservationsHistory": {
     "id": "bahmni.clinical.conceptSetGroup.observations.history",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
@@ -161,17 +149,6 @@
       "default": true
     },
     "order": 4,
-    "requiredPrivilege": "app:clinical"
-  },
-    "bahmniClinicalConceptSetGroupObservationsCommunitySurvey": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.communitysurvey",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
-    "type": "config",
-    "extensionParams": {
-      "conceptName": "GHC_Community Survey Form",
-      "default": true
-    },
-    "order": 9,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsSecondVitals": {

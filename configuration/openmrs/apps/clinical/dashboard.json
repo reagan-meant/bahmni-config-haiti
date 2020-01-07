@@ -261,16 +261,6 @@
                     }
                 }
             },
-            "communitySurvey": {
-                "type": "forms",
-                "displayOrder": 16,
-                "dashboardConfig": {
-                    "title": null,
-                    "maximumNoOfVisits": 10
-                },
-                "formGroup": ["GHC_Community Survey Form"],
-                "translationKey": "DASHBOARD_TITLE_COMMUNITY_SURVEY"
-            },
             "Laboratory":{
                 "translationKey":"DASHBOARD_TITLE_LABORATORY_KEY",
                 "type":"vitals",
