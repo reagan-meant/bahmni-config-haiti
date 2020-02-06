@@ -100,6 +100,8 @@
 
   "OBS_ABNORMAL_TRANSLATE_KEY": "Anormal",
   "TRIAGE_INFORMATION": "Triage",
-  "VITAL_SIGNS": "Constantes"
-
+  "VITAL_SIGNS": "signes vitaux",
+  "ATTRIBUTE_SEARCH" : "Attribut",
+  "SEARCH_PHONE_NUMBER_PLACEHOLDER" : "Entrez numéro de téléphone",
+  "SEARCH_COMMUNE_PLACEHOLDER" : "Entrer Commune"
 }

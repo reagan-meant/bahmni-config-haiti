@@ -42,12 +42,12 @@
         "patientSearch": {
             "address": {
             "label": "Commune",
-            "placeholder": "Enter Commune",
+            "placeholder": "SEARCH_COMMUNE_PLACEHOLDER",
             "field": "city_village"
             },
             "customAttributes": {
-                "label": "Attribute Search",
-                "placeholder": "Enter Phone Number",
+                "label": "ATTRIBUTE_SEARCH",
+                "placeholder": "SEARCH_PHONE_NUMBER_PLACEHOLDER",
                 "fields": ["phoneNumber","2ndPhoneNumber"]
             }
         },
