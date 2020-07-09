@@ -10,7 +10,7 @@
   "CUSTOM_SEARCH": "Entrer",
   "DISPLAY_CONTROL_ERROR_MESSAGE_KEY": "Pas {{ displayControl }} pour ce patient.",
   "EDIT_LABEL": "Modifier",
-  "FEE_INFORMATION_LOCALE_KEY": "Frais d'inscription",
+  "FEE_INFORMATION_LOCALE_KEY": "Frais de consultation",
   "Location.country": "Pays",
   "Location.village": "Village",
   "MESSAGE_DIALOG_OPTION_COPY": "Copier l'erreur",
