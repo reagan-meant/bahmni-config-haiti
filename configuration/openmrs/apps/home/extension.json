@@ -68,5 +68,15 @@
     "icon": "icon-bahmni-admin",
     "order":8,
     "requiredPrivilege": "app:admin"
-}
+},
+  "appointments": {
+    "id": "bahmni.appointment",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_APPOINTMENT_SCHEDULING_KEY",
+    "url": "../appointments",
+    "icon": "fa fa-calendar",
+    "order": 9,
+    "requiredPrivilege": "app:appointments"
+  }
 }
