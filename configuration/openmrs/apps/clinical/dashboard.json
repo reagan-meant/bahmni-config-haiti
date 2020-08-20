@@ -362,96 +362,37 @@
         "displayByDefault":true,
         "maxRecentlyViewedPatients":10,
         "sections":{
-            "heightForAge2_20Chart":{
+            "heightForAgeChart":{
                 "type":"observationGraph",
-                "translationKey": "DASHBOARD_TITLE_HEIGHT_AGE_2_20_KEY",
+                "translationKey": "DASHBOARD_TITLE_HEIGHT_AGE_KEY",
                 "config":{
                     "yAxisConcepts":[
                         "Height"
                     ],
-                    "referenceData":"charts/heightForAge2_20Years.csv",
+                    "referenceData":"charts/heightForAge.csv",
                     "numberOfVisits":20
                 },
                 "displayOrder":30
             },
-            "lengthForAge0_36Chart":{
+            "weightForAgeChart":{
                 "type":"observationGraph",
-                "translationKey": "DASHBOARD_TITLE_HEIGHT_AGE_0_36_KEY",
-                "config":{
-                    "yAxisConcepts":[
-                        "Height"
-                    ],
-                    "referenceData":"charts/lengthForAge0_36Months.csv",
-                    "numberOfVisits":20
-                },
-                "displayOrder":31
-            },
-            "headCircumferencePerAge0_36Chart":{
-                "type":"observationGraph",
-                "translationKey": "DASHBOARD_TITLE_HEAD_CIRCUMFERENCE_AGE_0_36_KEY",
-                "config":{
-                    "yAxisConcepts":[
-                        "head circumference"
-                    ],
-                    "referenceData":"charts/headCircumferencePerAge0_36Months.csv",
-                    "numberOfVisits":20
-                },
-                "displayOrder":34
-            },
-            "weightForAge0_36Chart":{
-                "type":"observationGraph",
-                "translationKey": "DASHBOARD_TITLE_WEIGHT_AGE_0_36_KEY",
+                "translationKey": "DASHBOARD_TITLE_WEIGHT_AGE_KEY",
                 "config":{
                     "yAxisConcepts":[
                         "Weight"
                     ],
-                    "referenceData":"charts/weightForAge0_36Months.csv",
+                    "referenceData":"charts/weightForAge.csv",
                     "numberOfVisits":20
                 },
                 "displayOrder":32
-            },
-            "weightForAge2_20Chart":{
-                "type":"observationGraph",
-                "translationKey": "DASHBOARD_TITLE_WEIGHT_AGE_2_20_KEY",
-                "config":{
-                    "yAxisConcepts":[
-                        "Weight"
-                    ],
-                    "referenceData":"charts/weightForAge2_20Years.csv",
-                    "numberOfVisits":20
-                },
-                "displayOrder":33
-            },
-            "patientInformation":{
-                "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
-                "type":"patientInformation",
-                "patientAttributes":[
-                    "caste",
-                    "class",
-                    "education",
-                    "occupation",
-                    "debt",
-                    "distanceFromCenter",
-                    "isUrban",
-                    "cluster",
-                    "RationCard",
-                    "familyIncome"
-                ],
-                "addressFields":[
-                    "address1",
-                    "address2",
-                    "cityVillage",
-                    "countryDistrict"
-                ],
-                "displayOrder":0
             },
             "BP":{
                 "type":"observationGraph",
                 "title":"BP",
                 "config":{
                     "yAxisConcepts":[
-                        "Systolic Data",
-                        "Diastolic Data"
+                        "Haiti_Systolic Blood Pressure Data",
+                        "Haiti_Diastolic Blood Pressure Data"
                     ],
                     "xAxisConcept":"observationDateTime",
                     "numberOfVisits":10
@@ -476,7 +417,7 @@
                 "title":"Pulse",
                 "config":{
                     "yAxisConcepts":[
-                        "Pulse Data"
+                        "Haiti_Pulse Data"
                     ],
                     "xAxisConcept":"observationDateTime",
                     "numberOfVisits":10

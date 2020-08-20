@@ -11,11 +11,9 @@
   "IMPL_BP_PULSE":"BP / Pulse",
   "IMPL_GROWTH_CHART":"Growth Chart",
   "IMPL_BILLING_STATUS":"Billing Status",
-  "DASHBOARD_TITLE_HEAD_CIRCUMFERENCE_AGE_0_36_KEY": "Head Circumference Growth Chart - 0-36m",
-  "DASHBOARD_TITLE_HEIGHT_AGE_0_36_KEY": "Height Growth Chart - 0-36m",
-  "DASHBOARD_TITLE_HEIGHT_AGE_2_20_KEY": "Height Growth Chart - 2-20y",
-  "DASHBOARD_TITLE_WEIGHT_AGE_0_36_KEY": "Weight Growth Chart - 0-36m",
-  "DASHBOARD_TITLE_WEIGHT_AGE_2_20_KEY": "Weight Growth Chart - 2-20y",
+
+  "DASHBOARD_TITLE_HEIGHT_AGE_KEY": "Height Growth Chart",
+  "DASHBOARD_TITLE_WEIGHT_AGE_KEY": "Weight Growth Chart",
 
   "DASHBOARD_TITLE_LAB_RESULTS_KEY": "Lab Results",
   "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY": "Lab Orders",
