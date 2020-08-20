@@ -34,10 +34,12 @@
     "triageLevel":{
         "id": "bahmni.registration.conceptSetGroup.triageLevel",
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
+        "type": "forms",
         "extensionParams": {
-            "conceptName": "Haiti_Triage information",
-            "translationKey": "TRIAGE_INFORMATION"
+            "formName": "Triage",
+            "conceptNames": ["Level of emergency severity assessment"],
+            "required":true,
+            "showLatest": true
         },
         "order": 2,
         "requiredPrivilege": "Edit Visits"
@@ -45,10 +47,12 @@
     "vitalSigns":{
         "id": "bahmni.registration.conceptSetGroup.vitalSigns",
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
+        "type": "forms",
         "extensionParams": {
-            "conceptName": "Haiti_Vital Signs Form",
-            "translationKey": "VITAL_SIGNS"
+            "formName": "Vital Signs",
+            "conceptNames": ["Nutritional Values", "Haiti_Blood Pressure Set", "Haiti_Pulse Data", "Haiti_Temperature Data", "Haiti_Respiratory Rate Data", "Haiti_Oxygen Saturation Data", "Haiti_Arm Circumference"],
+            "required":true,
+            "showLatest": true
         },
         "order": 1,
         "requiredPrivilege": "Edit Visits"
