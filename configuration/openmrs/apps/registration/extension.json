@@ -50,7 +50,7 @@
         "type": "forms",
         "extensionParams": {
             "formName": "Vital Signs",
-            "conceptNames": ["Nutritional Values", "Haiti_Blood Pressure Set", "Haiti_Pulse Data", "Haiti_Temperature Data", "Haiti_Respiratory Rate Data", "Haiti_Oxygen Saturation Data", "Haiti_Arm Circumference"],
+            "conceptNames": ["Weight","Height", "Blood Pressure Set", "Pulse", "Temperature", "Respiratory Rate", "Oxygen Saturation", "Mid-Upper Arm Circumference"],
             "required":true,
             "showLatest": true
         },

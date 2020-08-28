@@ -391,8 +391,8 @@
                 "title":"BP",
                 "config":{
                     "yAxisConcepts":[
-                        "Haiti_Systolic Blood Pressure Data",
-                        "Haiti_Diastolic Blood Pressure Data"
+                        "Systolic Blood Pressure",
+                        "Diastolic Blood Pressure"
                     ],
                     "xAxisConcept":"observationDateTime",
                     "numberOfVisits":10
@@ -417,7 +417,7 @@
                 "title":"Pulse",
                 "config":{
                     "yAxisConcepts":[
-                        "Haiti_Pulse Data"
+                        "Pulse"
                     ],
                     "xAxisConcept":"observationDateTime",
                     "numberOfVisits":10
