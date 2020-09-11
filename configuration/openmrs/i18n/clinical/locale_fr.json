@@ -381,5 +381,10 @@
   "VISIT_TITLE_PATIENT_INFORMATION": "Informations patient",
   "VISIT_TITLE_RADIOLOGY_KEY": "Radiologie",
   "VISIT_TITLE_TREATMENTS_KEY": "Médicaments",
-  "YEARS_LABEL": "An(s)"
+  "YEARS_LABEL": "An(s)",
+  "VACCINATIONS": "Vaccinations",
+  "VACCINE": "Vaccin",
+  "SEQUENCE_NUMBER": "Numéro des vaccinations.",
+  "DATE_GIVEN": "Date de vaccination"
+
 }

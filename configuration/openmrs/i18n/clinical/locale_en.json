@@ -11,6 +11,11 @@
   "IMPL_BP_PULSE":"BP / Pulse",
   "IMPL_GROWTH_CHART":"Growth Chart",
   "IMPL_BILLING_STATUS":"Billing Status",
+  "VACCINATIONS": "Vaccinations",
+  "VACCINE": "Vaccine",
+  "SEQUENCE_NUMBER": "Sequence No.",
+  "DATE_GIVEN": "Date Given",
+
 
   "DASHBOARD_TITLE_HEIGHT_AGE_KEY": "Height Growth Chart",
   "DASHBOARD_TITLE_WEIGHT_AGE_KEY": "Weight Growth Chart",
