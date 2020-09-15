@@ -384,7 +384,9 @@
   "YEARS_LABEL": "An(s)",
   "VACCINATIONS": "Vaccinations",
   "VACCINE": "Vaccin",
-  "SEQUENCE_NUMBER": "Numéro des vaccinations.",
-  "DATE_GIVEN": "Date de vaccination"
-
+  "SEQUENCE_NUMBER": "Numéro de séquence",
+  "DATE_GIVEN": "Date de vaccination",
+  "VACCINE_MANUFACTURER":"Fabricant de vaccins",
+  "VACCINE_LOT_NUMBER":"Numéro de lot du vaccin",
+  "VACCINE_LOT_EXPIRATION_DATE":"Date d'expiration du lot de vaccins"
 }

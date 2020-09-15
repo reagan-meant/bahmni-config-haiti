@@ -15,6 +15,9 @@
   "VACCINE": "Vaccine",
   "SEQUENCE_NUMBER": "Sequence No.",
   "DATE_GIVEN": "Date Given",
+  "VACCINE_MANUFACTURER":"Vaccine Manufacturer",
+  "VACCINE_LOT_NUMBER":"Vaccine Lot Number",
+  "VACCINE_LOT_EXPIRATION_DATE":"Vaccine Lot Expiration Date",
 
 
   "DASHBOARD_TITLE_HEIGHT_AGE_KEY": "Height Growth Chart",

@@ -8,6 +8,14 @@ angular.module('bahmni.common.displaycontrol.custom')
 
             $scope.immunizations = [];
 
+            $scope.propertyName = '-vaccinationDate';
+            $scope.reverse = true;
+
+            $scope.sortBy = function () {
+                $scope.propertyName = ($scope.reverse === true) ? 'vaccinationDate' : '-vaccinationDate';
+                $scope.reverse = !$scope.reverse;
+            };
+
             // If the configration parameter is not present, return an promise that resolves an empty array
             var fetchImmunizationSets = {};
             if ($scope.config.immunizationSets == undefined) {
@@ -44,7 +52,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                     $scope.immunizations.push(immunization);
                     return immunization
                 });
-              
+
             });
 
         };
@@ -202,4 +210,15 @@ angular.module('bahmni.common.displaycontrol.custom')
             },
             template: '<ng-include src="contentUrl"/>'
         }
-    }]);
+    }]).controller('immunizationDetailsController', ['$scope',
+        function ($scope) {
+            $scope.immunizations = $scope.ngDialogData;
+            $scope.propertyName = '-vaccinationDate';
+            $scope.reverse = true;
+
+            $scope.sortBy = function () {
+                $scope.propertyName = ($scope.reverse === true) ? 'vaccinationDate' : '-vaccinationDate';
+                $scope.reverse = !$scope.reverse;
+            };
+
+        }]);

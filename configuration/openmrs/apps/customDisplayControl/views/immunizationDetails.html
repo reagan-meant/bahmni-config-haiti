@@ -1,11 +1,7 @@
-<section class="dashboard-section">
-    <h2 ng-if="true" ng-dialog="../../bahmni_config/openmrs/apps/customDisplayControl/views/immunizationDetails.html"
-        ng-dialog-controller="immunizationDetailsController" ng-dialog-data='{{immunizations}}'
-        ng-dialog-class="ngdialog-theme-default ng-dialog-all-details-page" class="section-title has-link">
-        <span class="title-link">{{config.translationKey | translate}} </span>
-        <i class="fa fa-external-link"></i>
+<div class="template-container">
+    <h2>
+        <span class="title-link">{{'VACCINATIONS' | translate}} </span>
     </h2>
-
     <div ng-show="!immunizations.length">
         <div class="placeholder-text">
             <p translate="DISPLAY_CONTROL_ERROR_MESSAGE_KEY"
@@ -23,6 +19,15 @@
                     <span ng-if='reverse'> <i class="fa fa-arrow-down"></i></span>
                     <span ng-if='!reverse'> <i class="fa fa-arrow-up"></i></span>
                 </th>
+                <th>
+                    <span>{{ ::'VACCINE_MANUFACTURER' | translate }}</span>
+                </th>
+                <th>
+                    <span>{{ ::'VACCINE_LOT_NUMBER' | translate }}</span>
+                </th>
+                <th>
+                    <span>{{ ::'VACCINE_LOT_EXPIRATION_DATE' | translate }}</span>
+                </th>
             </tr>
 
         </thead>
@@ -38,8 +43,23 @@
                         {{obs.vaccinationDate | bahmniDate }}
                     </span>
                 </td>
+                <td>
+                    <span>
+                        {{obs.vaccationManufacturer }}
+                    </span>
+                </td>
+                <td>
+                    <span>
+                        {{obs.vaccineLotNumber }}
+                    </span>
+                </td>
+                <td>
+                    <span>
+                        {{obs.vaccinationExpiryDate | bahmniDate }}
+                    </span>
+                </td>
             </tr>
         </tbody>
     </table>
 
-</section>
+</div>
