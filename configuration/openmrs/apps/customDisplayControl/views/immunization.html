@@ -20,14 +20,12 @@
                 </th>
                 <th ng-click="sortBy()">
                     <span>{{ ::'DATE_GIVEN' | translate }}</span>
-                    <span ng-if='reverse'> <i class="fa fa-arrow-down"></i></span>
-                    <span ng-if='!reverse'> <i class="fa fa-arrow-up"></i></span>
                 </th>
             </tr>
 
         </thead>
         <tbody>
-            <tr ng-repeat="obs in immunizations | orderBy:['name',propertyName]">
+            <tr ng-repeat="obs in immunizations | orderBy:['name','-vaccationSequenceValue'] | unique:'name'">
                 <td>
                     <span>
                         {{obs.name | translate }} ({{obs.vaccationSequenceValue | translate }})
