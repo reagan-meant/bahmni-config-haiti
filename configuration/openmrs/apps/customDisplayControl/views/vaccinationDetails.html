@@ -2,13 +2,13 @@
     <h2>
         <span class="title-link">{{'VACCINATIONS' | translate}} </span>
     </h2>
-    <div ng-show="!immunizations.length">
+    <div ng-show="!vaccinations.length">
         <div class="placeholder-text">
             <p translate="DISPLAY_CONTROL_ERROR_MESSAGE_KEY"
                 translate-values="{displayControl : '{{config.translationKey | translate}}'}"></p>
         </div>
     </div>
-    <table ng-show="immunizations.length">
+    <table ng-show="vaccinations.length">
         <thead>
             <tr>
                 <th>
@@ -30,31 +30,31 @@
 
         </thead>
         <tbody>
-            <tr ng-repeat="obs in immunizations | orderBy:['name','-vaccationSequenceValue']">
+            <tr ng-repeat="(key, value) in groupedvaccination">
                 <td>
-                    <span>
+                    <div ng-repeat="obs in value | orderBy:['-vaccationSequenceValue']">
                         {{obs.name | translate }} ({{obs.vaccationSequenceValue | translate }})
-                    </span>
+                    </div>
                 </td>
                 <td>
-                    <span>
+                    <div ng-repeat="obs in value | orderBy:['-vaccationSequenceValue']">
                         {{obs.vaccinationDate | bahmniDate }}
-                    </span>
+                    </div>
                 </td>
                 <td>
-                    <span>
+                    <div ng-repeat="obs in value | orderBy:['-vaccationSequenceValue']">
                         {{obs.vaccationManufacturer }}
-                    </span>
+                    </div>
                 </td>
                 <td>
-                    <span>
+                    <div ng-repeat="obs in value | orderBy:['-vaccationSequenceValue']">
                         {{obs.vaccineLotNumber }}
-                    </span>
+                    </div>
                 </td>
                 <td>
-                    <span>
+                    <div ng-repeat="obs in value | orderBy:['-vaccationSequenceValue']">
                         {{obs.vaccinationExpiryDate | bahmniDate }}
-                    </span>
+                    </div>
                 </td>
             </tr>
         </tbody>

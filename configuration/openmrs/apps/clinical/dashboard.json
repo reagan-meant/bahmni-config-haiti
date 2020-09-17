@@ -212,9 +212,9 @@
                 "showDetailsButton": true,
                 "config": {
                     "showDetailsButton": true,
-                    "translationKey": "MOST_RECENT_VACCINATIONS",
-                    "template": "<immunization></immunization>",
-                    "immunizationSets":[
+                    "translationKey": "MOST_RECENT_VACCINATION_SEQUENCES",
+                    "template": "<vaccination></vaccination>",
+                    "vaccinationSets":[
                         "Vaccination History"
                     ]
                 }

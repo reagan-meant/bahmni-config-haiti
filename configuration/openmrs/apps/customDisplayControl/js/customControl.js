@@ -1,56 +1,48 @@
 'use strict';
 
 angular.module('bahmni.common.displaycontrol.custom')
-    .directive('immunization', ['observationsService','appService', 'spinner', '$q', function (observationsService, appService, spinner, $q) {
+    .directive('vaccination', ['observationsService', 'appService', 'spinner', '$q', function (observationsService, appService, spinner, $q) {
         var link = function ($scope) {
 
-            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/immunization.html";
+            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/vaccination.html";
 
-            $scope.immunizations = [];
-
-            $scope.propertyName = '-vaccinationDate';
-            $scope.reverse = true;
-
-            $scope.sortBy = function () {
-                $scope.propertyName = ($scope.reverse === true) ? 'vaccinationDate' : '-vaccinationDate';
-                $scope.reverse = !$scope.reverse;
-            };
+            $scope.vaccinations = [];
 
             // If the configration parameter is not present, return an promise that resolves an empty array
-            var fetchImmunizationSets = {};
-            if ($scope.config.immunizationSets == undefined) {
+            var fetchVaccinationSets = {};
+            if ($scope.config.vaccinationSets == undefined) {
                 var deferred = $q.defer()
                 deferred.resolve([])
-                fetchImmunizationSets = deferred.promise;
+                fetchVaccinationSets = deferred.promise;
             } else {
-                fetchImmunizationSets = spinner.forPromise(observationsService.fetch($scope.patient.uuid, $scope.config.immunizationSets, undefined, undefined, undefined, undefined))
+                fetchVaccinationSets = spinner.forPromise(observationsService.fetch($scope.patient.uuid, $scope.config.vaccinationSets, undefined, undefined, undefined, undefined))
             }
 
-            fetchImmunizationSets.then(function (response) {
-                var immunizationSets = response.data;
-                immunizationSets = _.map(immunizationSets, function (item, index) {
-                    var immunization = {}
+            fetchVaccinationSets.then(function (response) {
+                var vaccinationSets = response.data;
+                vaccinationSets = _.map(vaccinationSets, function (item, index) {
+                    var vaccination = {}
 
                     for (var x of item.groupMembers) {
                         if (x.concept.name == 'Vaccinations') {
-                            immunization.conceptUuid = x.conceptUuid;
-                            immunization.name = x.valueAsString;
-                            immunization.fullySpecifiedName = x.value.name;
+                            vaccination.conceptUuid = x.conceptUuid;
+                            vaccination.name = x.valueAsString;
+                            vaccination.fullySpecifiedName = x.value.name;
                         } else if (x.concept.name == 'Vaccination date') {
-                            immunization.vaccinationDate = x.value;
+                            vaccination.vaccinationDate = x.value;
                         } else if (x.concept.name == 'Vaccination sequence number') {
-                            immunization.vaccationSequenceValue = x.value;
+                            vaccination.vaccationSequenceValue = x.value;
                         } else if (x.concept.name == 'Vaccine Manufacturer') {
-                            immunization.vaccationManufacturer = x.valueAsString;
+                            vaccination.vaccationManufacturer = x.valueAsString;
                         } else if (x.concept.name == 'Vaccine Lot Number') {
-                            immunization.vaccineLotNumber = x.value;
+                            vaccination.vaccineLotNumber = x.value;
                         } else if (x.concept.name == 'Vaccine lot expiration date') {
-                            immunization.vaccinationExpiryDate = x.value;
+                            vaccination.vaccinationExpiryDate = x.value;
                         }
                     }
 
-                    $scope.immunizations.push(immunization);
-                    return immunization
+                    $scope.vaccinations.push(vaccination);
+                    return vaccination
                 });
 
             });
@@ -61,7 +53,50 @@ angular.module('bahmni.common.displaycontrol.custom')
             link: link,
             template: '<ng-include src="contentUrl"/>'
         }
-    }])
+    }]).controller('vaccinationDetailsController', ['$scope',
+        function ($scope) {
+            $scope.vaccinations = $scope.ngDialogData;
+            console.log($scope.vaccinations);
+
+            function groupBy(objectArray, property) {
+                return objectArray.reduce(function (acc, obj) {
+                    var key = obj[property];
+                    if (!acc[key]) {
+                        acc[key] = [];
+                    }
+                    acc[key].push(obj);
+                    return acc;
+                }, {});
+            }
+
+            $scope.groupedvaccination = groupBy($scope.vaccinations, 'name');
+
+        }]).filter("unique", function () {
+            // we will return a function which will take in a collection
+            // and a keyname
+            return function (collection, keyname) {
+                // we define our output and keys array;
+                var output = [],
+                    keys = [];
+
+                // we utilize angular's foreach function
+                // this takes in our original collection and an iterator function
+                angular.forEach(collection, function (item) {
+                    // we check to see whether our object exists
+                    var key = item[keyname];
+                    // if it's not already part of our keys array
+                    if (keys.indexOf(key) === -1) {
+                        // add it to our keys array
+                        keys.push(key);
+                        // push this item to our final output array
+                        output.push(item);
+                    }
+                });
+                // return our array which should be devoid of
+                // any duplicates
+                return output;
+            };
+        })
     .directive('birthCertificate', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
         var link = function ($scope) {
             console.log("inside birth certificate");
@@ -210,40 +245,4 @@ angular.module('bahmni.common.displaycontrol.custom')
             },
             template: '<ng-include src="contentUrl"/>'
         }
-    }]).controller('immunizationDetailsController', ['$scope',
-        function ($scope) {
-            $scope.immunizations = $scope.ngDialogData;
-            $scope.propertyName = '-vaccinationDate';
-            $scope.reverse = true;
-
-            $scope.sortBy = function () {
-                $scope.propertyName = ($scope.reverse === true) ? 'vaccinationDate' : '-vaccinationDate';
-                $scope.reverse = !$scope.reverse;
-            };
-
-        }]).filter("unique", function() {
-            // we will return a function which will take in a collection
-            // and a keyname
-            return function(collection, keyname) {
-              // we define our output and keys array;
-              var output = [],
-                keys = [];
-          
-              // we utilize angular's foreach function
-              // this takes in our original collection and an iterator function
-              angular.forEach(collection, function(item) {
-                // we check to see whether our object exists
-                var key = item[keyname];
-                // if it's not already part of our keys array
-                if (keys.indexOf(key) === -1) {
-                  // add it to our keys array
-                  keys.push(key);
-                  // push this item to our final output array
-                  output.push(item);
-                }
-              });
-              // return our array which should be devoid of
-              // any duplicates
-              return output;
-            };
-          });
+    }]);
