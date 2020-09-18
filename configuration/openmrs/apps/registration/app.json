@@ -32,6 +32,7 @@
             "showAddressFieldsTopDown": true
         },
         "autoCompleteFields":["familyName"],
+        "defaultVisitType": "Général",
         "searchByIdForwardUrl": "/patient/{{patientUuid}}",
         "showLastName": true,
         "showBirthTime": false,
