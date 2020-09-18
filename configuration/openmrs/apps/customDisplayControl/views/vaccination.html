@@ -28,7 +28,7 @@
             <tr ng-repeat="obs in vaccinations | orderBy:['name','-vaccationSequenceValue'] | unique:'name'">
                 <td>
                     <span>
-                        {{obs.name | translate }} ({{obs.vaccationSequenceValue | translate }})
+                        {{obs.name | translate }} <b> ({{obs.vaccationSequenceValue | translate }})</b>
                     </span>
                 </td>
                 <td>
