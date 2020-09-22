@@ -1,0 +1,63 @@
+<div class="template-container">
+    <h2>
+        <span class="title-link">{{'VACCINATIONS' | translate}} </span>
+    </h2>
+    <div ng-show="!vaccinations.length">
+        <div class="placeholder-text">
+            <p translate="DISPLAY_CONTROL_ERROR_MESSAGE_KEY"
+                translate-values="{displayControl : '{{config.translationKey | translate}}'}"></p>
+        </div>
+    </div>
+    <table ng-show="vaccinations.length">
+        <thead>
+            <tr>
+                <th>
+                    <span>{{ ::'VACCINE' | translate }}</span>
+                </th>
+                <th>
+                    <span>{{ ::'DATE_GIVEN' | translate }}</span>
+                </th>
+                <th>
+                    <span>{{ ::'VACCINE_MANUFACTURER' | translate }}</span>
+                </th>
+                <th>
+                    <span>{{ ::'VACCINE_LOT_NUMBER' | translate }}</span>
+                </th>
+                <th>
+                    <span>{{ ::'VACCINE_LOT_EXPIRATION_DATE' | translate }}</span>
+                </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr ng-repeat="(key, value) in groupedvaccination">
+                <td>
+                    <div ng-repeat="obs in value | orderBy:['-vaccationSequenceValue']">
+                        {{obs.name | translate }} ({{obs.vaccationSequenceValue | translate }})
+                    </div>
+                </td>
+                <td>
+                    <div ng-repeat="obs in value | orderBy:['-vaccationSequenceValue']">
+                        {{obs.vaccinationDate | bahmniDate }}
+                    </div>
+                </td>
+                <td>
+                    <div ng-repeat="obs in value | orderBy:['-vaccationSequenceValue']">
+                        {{obs.vaccationManufacturer }}
+                    </div>
+                </td>
+                <td>
+                    <div ng-repeat="obs in value | orderBy:['-vaccationSequenceValue']">
+                        {{obs.vaccineLotNumber }}
+                    </div>
+                </td>
+                <td>
+                    <div ng-repeat="obs in value | orderBy:['-vaccationSequenceValue']">
+                        {{obs.vaccinationExpiryDate | bahmniDate }}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
