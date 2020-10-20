@@ -1,28 +1,46 @@
 {
-  "commonConfig": {
-  },
+  "commonConfig": {},
   "tabConfig": {
     "allMedicationTabConfig": {
       "inputOptionsConfig": {
         "defaultDurationUnit": "Day(s)",
-        "hideOrderSet" : false,
+        "hideOrderSet": false,
         "defaultInstructions": "As directed",
-	"labels": {
-  	  "asNeeded":"MEDICATION_AS_NEEDED",
-  	  "asNeededButton":"MEDICATION_AS_NEEDED_BUTTON_PLACEHOLDER",
-  	  "asNeededButtonAccessKey":"MEDICATION_AS_NEEDED_ACCESS_KEY"
+        "labels": {
+          "asNeeded": "MEDICATION_AS_NEEDED",
+          "asNeededButton": "MEDICATION_AS_NEEDED_BUTTON_PLACEHOLDER",
+          "asNeededButtonAccessKey": "MEDICATION_AS_NEEDED_ACCESS_KEY"
         },
-	"routesToMakeDoseSectionNonMandatory" : ["Oral", "Topical", "Inhaler","Intramuscular","Intravenous","Intravaginal","Ophthalmic","Otic","See comments"],
-	"frequencies":  [
-          "Now",
-          "Daily",
-          "Nightly",
+        "routesToMakeDoseSectionNonMandatory": [
+          "Oral",
+          "Topical",
+          "Inhaler",
+          "Intramuscular",
+          "Intravenous",
+          "Intravaginal",
+          "Ophthalmic",
+          "Otic",
+          "See comments"
+        ],
+        "frequencies": [
+          "Q1H",
+          "Q2H",
+          "Q3H",
           "Q4H",
+          "Q5H",
+          "Five times/Day",
           "Q6H",
           "Q8H",
           "Q12H",
-          "Weekly",
+          "Daily",
+          "Nightly",
           "Q48H",
+          "Weekly",
+          "Twice/Week",
+          "Thrice/Week",
+          "Once Every 2 Weeks",
+          "Once Every 3 Weeks",
+          "Monthly",
           "See comments"
         ],
         "frequencyDefaultDurationUnitsMap": [
@@ -101,7 +119,7 @@
           },
           "Ointment": {
             "doseUnits": "Application",
-	    "route": "Topical"
+            "route": "Topical"
           },
           "Pessary": {
             "doseUnits": "Unit(s)",
