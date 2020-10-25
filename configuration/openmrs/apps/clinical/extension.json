@@ -52,7 +52,7 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "All",
-    "order": 5,
+    "order": 9,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalPatientsSearchAllActivePatients": {
@@ -94,17 +94,70 @@
     "order": 3,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalPatientsSearchQueuePatient": {
-    "id": "bahmni.clinical.patients.search.queuePatients",
+  "bahmniClinicalPatientsSearchPrenatalPatient": {
+    "id": "bahmni.clinical.patients.search.prenatalPatients",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-      "searchHandler":"emrapi.sqlSearch.queuePatients",
-      "translationKey": "MODULE_LABEL_QUEUE_KEY",
+      "searchHandler":"emrapi.sqlSearch.prenatalPatients",
+      "translationKey": "MODULE_LABEL_PRENATAL_KEY",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
-    "label": "Queue",
+    "label": "Prenatal",
     "order": 4,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalPatientsSearchFamilyPlanningPatient": {
+    "id": "bahmni.clinical.patients.search.familyPlanningPatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler":"emrapi.sqlSearch.familyPlanningPatients",
+      "translationKey": "MODULE_LABEL_FAMILY_PLANNING_KEY",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "Family Planning",
+    "order": 5,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalPatientsSearchInfantVaccinationPatient": {
+    "id": "bahmni.clinical.patients.search.infantvaccinationPatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler":"emrapi.sqlSearch.infantvaccinationPatients",
+      "translationKey": "MODULE_LABEL_INFANT_VACCINATION_KEY",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "Infant Vaccination",
+    "order": 6,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalPatientsSearchMalnutritionPatient": {
+    "id": "bahmni.clinical.patients.search.MalnutritionPatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler":"emrapi.sqlSearch.MalnutritionPatients",
+      "translationKey": "MODULE_LABEL_MALNUTRITION_KEY",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "Malnutrition",
+    "order": 7,
+    "requiredPrivilege": "app:clinical"
+  },
+  
+  "bahmniClinicalPatientsSearchGeneralPatient": {
+    "id": "bahmni.clinical.patients.search.GeneralPatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler":"emrapi.sqlSearch.GeneralPatients",
+      "translationKey": "MODULE_LABEL_GENERAL_KEY",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "General",
+    "order": 8,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsHistory": {
