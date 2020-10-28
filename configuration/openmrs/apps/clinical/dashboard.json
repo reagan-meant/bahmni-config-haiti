@@ -51,6 +51,16 @@
                     "showDetailsButton":true
                 }
             },
+            "albendazoleAndVitaminA": {
+                "translationKey": "DASHBOARD_TITLE_ALBENDAZOLE_VITAMIN_A_KEY",
+                "type": "drugOrderDetails",
+                "showDetailsButton": true,
+                "displayOrder": 24,
+                "dashboardConfig": {
+                    "showOnlyActive": false,
+                    "drugConceptSet": "Albendazole and Vitamin A Set"
+                }
+            },
             "radiology":{
                 "translationKey":"DASHBOARD_TITLE_RADIOLOGY_KEY",
                 "type":"radiology",
