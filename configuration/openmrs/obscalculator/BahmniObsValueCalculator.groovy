@@ -25,14 +25,14 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     static Map<BahmniObservation, BahmniObservation> obsParentMap = new HashMap<BahmniObservation, BahmniObservation>();
 
     public static enum BmiStatus {
-        VERY_SEVERELY_UNDERWEIGHT("Poids très insuffisant"),
-        SEVERELY_UNDERWEIGHT("Insuffisance pondérale grave"),
-        UNDERWEIGHT("Poids insuffisant"),
-        NORMAL("Ordinaire"),
-        OVERWEIGHT("En surpoids"),
+        VERY_SEVERELY_UNDERWEIGHT("Maigreur très sévère"),
+        SEVERELY_UNDERWEIGHT("Maigreur sévère"),
+        UNDERWEIGHT("Maigreur"),
+        NORMAL("Normal"),
+        OVERWEIGHT("Surpoids"),
         OBESE("Obèse"),
-        SEVERELY_OBESE("Gravement obèse"),
-        VERY_SEVERELY_OBESE("Très gravement obèse");
+        SEVERELY_OBESE("Obésité sevère"),
+        VERY_SEVERELY_OBESE("Obésité morbide ou massive");
 
         private String status;
 
