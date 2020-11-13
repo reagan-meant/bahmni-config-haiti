@@ -1,0 +1,39 @@
+<div class="template-container">
+    <h2>
+        <span class="title-link">{{'DASHBOARD_TITLE_ALBENDAZOLE_VITAMIN_A_KEY' | translate}} </span>
+    </h2>
+    <div ng-show="!drugOrderResponse.length">
+        <div class="placeholder-text">
+            <p translate="DISPLAY_CONTROL_ERROR_MESSAGE_KEY"
+                translate-values="{displayControl : '{{config.translationKey | translate}}'}"></p>
+        </div>
+    </div>
+
+    <table ng-show="drugOrderResponse.length">
+        <thead>
+            <tr>
+                <th>
+                    <span>{{ ::'DATE' | translate }}</span>
+                </th>
+                <th>
+                    <span>{{ ::'DRUG' | translate }}</span>
+                </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr ng-repeat="drug in drugOrderResponse | orderBy:['-effectiveStartDate']">
+                <td>
+                    <span>
+                        {{drug.effectiveStartDate | bahmniDate }}
+                    </span>
+                </td>
+                <td>
+                    <span>
+                        {{drug.drug.name | translate }}
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

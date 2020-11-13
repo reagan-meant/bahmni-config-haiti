@@ -219,6 +219,19 @@
                     ]
                 }
             },
+            "albendazoleAndVitaminA": {
+                "type": "custom",
+                "displayOrder": 12,
+                "showDetailsButton": true,
+                "config": {
+                    "showDetailsButton": true,
+                    "translationKey": "DASHBOARD_TITLE_ALBENDAZOLE_VITAMIN_A_KEY",
+                    "template": "<customdrugs></customdrugs>",
+                    "drugConceptSet": [
+                        "Albendazole and Vitamin A Set"
+                    ]
+                }
+            },
             "historyAndExaminations":{
                 "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "type":"vitals",

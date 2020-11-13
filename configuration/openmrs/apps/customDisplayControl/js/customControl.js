@@ -56,7 +56,6 @@ angular.module('bahmni.common.displaycontrol.custom')
     }]).controller('vaccinationDetailsController', ['$scope',
         function ($scope) {
             $scope.vaccinations = $scope.ngDialogData;
-            console.log($scope.vaccinations);
 
             function groupBy(objectArray, property) {
                 return objectArray.reduce(function (acc, obj) {
@@ -97,9 +96,36 @@ angular.module('bahmni.common.displaycontrol.custom')
                 return output;
             };
         })
+        .directive('customdrugs', [ 'appService', 'treatmentService', '$q', function ( appService, treatmentService, $q) {
+            var link = function ($scope) {
+                $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/customDrugs.html";
+        
+                $scope.drugOrderResponse = [];
+                // If the configration parameter is not present, return an promise that resolves an empty array
+                var fetchCustomDrugs = {};
+                if ($scope.config.drugConceptSet == undefined) {
+                    var deferred = $q.defer()
+                    deferred.resolve([])
+                    fetchCustomDrugs = deferred.promise;
+                } else {
+                     treatmentService.getAllDrugOrdersFor($scope.patient.uuid, $scope.config.drugConceptSet, $scope.config.excludeConceptSet, $scope.config.active, $scope.enrollment).then(function (drugOrderResponse) {
+                        $scope.drugOrderResponse = drugOrderResponse;             
+        
+                        return drugOrderResponse;
+                    });  
+                }
+            };
+            return {
+                restrict: 'E',
+                link: link,
+                template: '<ng-include src="contentUrl"/>'
+            }
+        }]).controller('customDrugsController', ['$scope',
+            function ($scope) {
+                $scope.drugOrderResponse = $scope.ngDialogData;
+            }])        
     .directive('birthCertificate', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
         var link = function ($scope) {
-            console.log("inside birth certificate");
             var conceptNames = ["HEIGHT"];
             $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/birthCertificate.html";
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {

@@ -1,0 +1,43 @@
+<section class="dashboard-section">
+    <h2 ng-if="true" ng-dialog="../../bahmni_config/openmrs/apps/customDisplayControl/views/customDrugsDetails.html"
+        ng-dialog-controller="customDrugsController" ng-dialog-data='{{drugOrderResponse}}'
+        ng-dialog-class="ngdialog-theme-default ng-dialog-all-details-page" class="section-title has-link">
+        <span class="title-link">{{config.translationKey | translate}} </span>
+        <i class="fa fa-external-link"></i>
+    </h2>
+
+    <div ng-show="!drugOrderResponse.length">
+        <div class="placeholder-text">
+            <p translate="DISPLAY_CONTROL_ERROR_MESSAGE_KEY"
+                translate-values="{displayControl : '{{config.translationKey | translate}}'}"></p>
+        </div>
+    </div>
+    <table ng-show="drugOrderResponse.length">
+        <thead>
+            <tr>
+                <th>
+                    <span>{{ ::'DATE' | translate }}</span>
+                </th>
+                <th>
+                    <span>{{ ::'DRUG' | translate }}</span>
+                </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr ng-repeat="drug in drugOrderResponse | orderBy:['-effectiveStartDate'] | limitTo: 6 ">
+                <td>
+                    <span>
+                        {{drug.effectiveStartDate | bahmniDate }}
+                    </span>
+                </td>
+                <td>
+                    <span>
+                        {{drug.drug.name | translate }}
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>
