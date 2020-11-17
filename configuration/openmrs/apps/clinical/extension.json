@@ -52,7 +52,7 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "All",
-    "order": 9,
+    "order": 10,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalPatientsSearchAllActivePatients": {
@@ -146,7 +146,6 @@
     "order": 7,
     "requiredPrivilege": "app:clinical"
   },
-  
   "bahmniClinicalPatientsSearchGeneralPatient": {
     "id": "bahmni.clinical.patients.search.GeneralPatients",
     "extensionPointId": "org.bahmni.patient.search",
@@ -158,6 +157,19 @@
     },
     "label": "General",
     "order": 8,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalPatientsSearchTBPatient": {
+    "id": "bahmni.clinical.patients.search.TBPatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler":"emrapi.sqlSearch.TBPatients",
+      "translationKey": "MODULE_LABEL_TB_KEY",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "TB",
+    "order": 9,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsHistory": {

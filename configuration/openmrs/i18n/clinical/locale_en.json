@@ -12,6 +12,7 @@
   "MODULE_LABEL_INFANT_VACCINATION_KEY":"Infant Vaccination",
   "MODULE_LABEL_MALNUTRITION_KEY":"Malnutrition",
   "MODULE_LABEL_GENERAL_KEY":"General",
+  "MODULE_LABEL_TB_KEY":"TB",
   "IMPL_BP_PULSE":"BP / Pulse",
   "IMPL_GROWTH_CHART":"Growth Chart",
   "IMPL_BILLING_STATUS":"Billing Status",
