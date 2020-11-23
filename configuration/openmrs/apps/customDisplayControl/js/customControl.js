@@ -56,7 +56,6 @@ angular.module('bahmni.common.displaycontrol.custom')
     }]).controller('vaccinationDetailsController', ['$scope',
         function ($scope) {
             $scope.vaccinations = $scope.ngDialogData;
-            console.log($scope.vaccinations);
 
             function groupBy(objectArray, property) {
                 return objectArray.reduce(function (acc, obj) {
@@ -99,7 +98,6 @@ angular.module('bahmni.common.displaycontrol.custom')
         })
     .directive('birthCertificate', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
         var link = function ($scope) {
-            console.log("inside birth certificate");
             var conceptNames = ["HEIGHT"];
             $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/birthCertificate.html";
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
