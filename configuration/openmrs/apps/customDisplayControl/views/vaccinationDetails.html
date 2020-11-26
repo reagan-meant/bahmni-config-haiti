@@ -33,7 +33,12 @@
             <tr ng-repeat="(key, value) in groupedvaccination">
                 <td>
                     <div ng-repeat="obs in value | orderBy:['-vaccationSequenceValue']">
-                        {{obs.name | translate }} ({{obs.vaccationSequenceValue | translate }})
+                        {{obs.name | translate }}
+
+                        <b ng-if="obs.vaccationSequenceValue == null"></b>
+                        <b ng-if="obs.vaccationSequenceValue < 10"> ({{obs.vaccationSequenceValue }})</b>
+                        <b ng-if="obs.vaccationSequenceValue >10">
+                            ({{"Booster " + (obs.vaccationSequenceValue -10) }})</b>
                     </div>
                 </td>
                 <td>

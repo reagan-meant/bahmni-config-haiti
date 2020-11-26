@@ -23,9 +23,7 @@
   "VACCINE_MANUFACTURER":"Vaccine Manufacturer",
   "VACCINE_LOT_NUMBER":"Vaccine Lot Number",
   "VACCINE_LOT_EXPIRATION_DATE":"Vaccine Lot Expiration Date",
-  "MOST_RECENT_VACCINATION_SEQUENCES":"MOST RECENT VACCINATION SEQUENCES",
-
-
+  "RECENT_VACCINATIONS":"Recent vaccinations",
 
   "DASHBOARD_TITLE_HEIGHT_AGE_KEY": "Height Growth Chart",
   "DASHBOARD_TITLE_WEIGHT_AGE_KEY": "Weight Growth Chart",
