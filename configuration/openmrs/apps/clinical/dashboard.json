@@ -84,28 +84,22 @@
                     "numberOfVisits":4
                 }
             },
-            "labOrdersDisplayControl":{
-                "translationKey":"DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-                "type":"ordersControl",
-                "orderType":"Lab Order",
-                "showDetailsButton":true,
+            "labResults":{  
+                "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
+                "type":"labOrders",
                 "displayOrder":9,
-                "dashboardConfig":{
-                    "conceptNames":[
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ]
+                "dashboardConfig":{  
+                    "title":null,
+                    "numberOfVisits":6,
+                    "showChart":false,
+                    "showTable":true,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "showDetailsButton":false
                 },
-                "expandedViewConfig":{
-                    "conceptNames":[
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ],
-                    "showDetailsButton":true
+                "expandedViewConfig":{  
+                    "numberOfVisits":10
                 }
             },
             "bacteriologyResults":{
