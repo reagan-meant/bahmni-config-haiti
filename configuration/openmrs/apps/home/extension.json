@@ -70,7 +70,7 @@
     "requiredPrivilege": "app:admin"
 },
   "appointments": {
-    "id": "bahmni.appointment",
+    "id": "bahmni.appointment.scheduling",
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_APPOINTMENT_SCHEDULING_KEY",
@@ -86,7 +86,7 @@
     "translationKey": "MODULE_LABEL_IMPLEMENTER_INTERFACE_KEY",
     "url": "/implementer-interface",
     "icon": "fa fa-pencil-square-o",
-    "order": 9,
+    "order": 10,
     "requiredPrivilege": "app:implementer-interface"
   }
 }
