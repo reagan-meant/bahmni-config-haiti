@@ -75,55 +75,36 @@
             "route": "Oral"
           },
           "Cream": {
+            "doseUnits": "Application",
             "route": "Topical"
           },
           "Drops": {
-            "doseUnits": "Drop",
-            "route": "Topical"
+            "doseUnits": "Drop(s)",
+            "route": "Ophthalmic"
           },
           "Food Supplement": {
             "doseUnits": "Unit(s)",
             "route": "Oral"
           },
-          "Gel": {
-            "doseUnits": "Application",
-            "route": "Topical"
-          },
-          "Granule": {
-            "doseUnits": "Unit(s)",
+          "Sublingual": {
+            "doseUnits": "Tablet(s)",
             "route": "Oral"
           },
-          "Inhaler": {
+          "Inhalable": {
             "doseUnits": "Puff(s)",
             "route": "Inhalation"
           },
-          "Injection": {
+          "Injectable": {
             "doseUnits": "mg",
             "route": "Intravenous"
-          },
-          "Suspension": {
-            "doseUnits": "mg",
-            "route": "Intravenous"
-          },
-          "Jelly": {
-            "doseUnits": "Application",
-            "route": "Topical"
-          },
-          "Liquid": {
-            "doseUnits": "ml",
-            "route": "Oral"
           },
           "Lotion": {
             "doseUnits": "Application",
             "route": "Topical"
           },
-          "Ointment": {
-            "doseUnits": "Application",
-            "route": "Topical"
-          },
           "Pessary": {
             "doseUnits": "Unit(s)",
-            "route": "Per Vaginal"
+            "route": "Intravaginal"
           },
           "Powder": {
             "doseUnits": "mg",
@@ -135,7 +116,11 @@
           },
           "Spray": {
             "doseUnits": "Puff(s)",
-            "route": "Nasal"
+            "route": "Inhalation"
+          },
+          "Syrup/Suspension": {
+            "doseUnits": "ml",
+            "route": "Oral"
           },
           "Syrup": {
             "doseUnits": "ml",
@@ -149,25 +134,25 @@
             "doseUnits": "Unit(s)",
             "route": "See comments"
           },
-          "Packet": {
+          "Oral Solution": {
+            "doseUnits": "ml",
+            "route": "Oral"
+          },
+          "Drinkable Suspension Gel": {
+            "doseUnits": "ml",
+            "route": "Oral"
+          },
+          "Oil": {
+            "doseUnits": "Application",
+            "route": "Topical"
+          },
+          "Pomade": {
+            "doseUnits": "Application",
+            "route": "Topical"
+          },
+          "Suppository": {
             "doseUnits": "Unit(s)",
-            "route": "See comments"
-          },
-          "Nasal Solution": {
-            "doseUnits": "ml",
-            "route": "See comments"
-          },
-          "Otic Solution": {
-            "doseUnits": "ml",
-            "route": "Otic"
-          },
-          "Ophthalmic Solution": {
-            "doseUnits": "ml",
-            "route": "Ophthalmic"
-          },
-          "Nebulizer Solution": {
-            "doseUnits": "ml",
-            "route": "See comments"
+            "route": "Rectal"
           }
         }
       }
