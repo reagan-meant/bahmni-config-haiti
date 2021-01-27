@@ -38,7 +38,40 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <artifactId>json-schema-validator</artifactId>
+        <groupId>com.groupon.maven.plugin.json</groupId>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>validate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <validations>
+            <validation>
+              <directory>configuration/</directory>
+              <includes>
+                <include>**/*.json</include>
+              </includes>
+            </validation>
+          </validations>
+        </configuration>
+      </plugin>
     </plugins>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.groupon.maven.plugin.json</groupId>
+          <artifactId>json-schema-validator</artifactId>
+          <version>1.2.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
   </build>
 
 </project>
