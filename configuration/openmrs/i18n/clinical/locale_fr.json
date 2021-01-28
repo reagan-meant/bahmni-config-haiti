@@ -153,6 +153,9 @@
   "DASHBOARD_TITLE_VISITS_KEY": "Visites",
   "DASHBOARD_TITLE_VITALS_KEY": "Signes Vitaux",
   "DASHBOARD_TITLE_WEIGHT_BMI": "Poids / IMC",
+  "DASHBOARD_TITLE_ALLERGIES_VALUES_KEY":"Allergies",
+  "DASHBOARD_TITLE_ANC_VALUES_KEY":"Soin prénatal",
+
   "DELETE_LABEL": "Supprimer",
   "DIAGNOSIS_BOARD_LABEL_KEY": "Diagnostics",
   "DIAGNOSIS_CURRENT_STAGE_LABEL": "En cours",
@@ -394,5 +397,18 @@
   "DATE_GIVEN": "Date de vaccination",
   "VACCINE_MANUFACTURER":"Fabricant de vaccins",
   "VACCINE_LOT_NUMBER":"Numéro de lot du vaccin",
-  "VACCINE_LOT_EXPIRATION_DATE":"Date d'expiration du lot de vaccins"
+  "VACCINE_LOT_EXPIRATION_DATE":"Date d'expiration du lot de vaccins",
+  
+  "DASHBOARD_TITLE_APPOINTMENTS_KEY": "Rendez-vous",
+  "DASHBOARD_APPOINTMENTS_SLOT_KEY": "Fente",
+  "DASHBOARD_APPOINTMENTS_SERVICE_KEY": "Un service",
+  "DASHBOARD_APPOINTMENTS_SERVICE_TYPE_KEY": "Type de rendez-vous de service",
+  "DASHBOARD_APPOINTMENTS_DATE_KEY": "Date",
+  "DASHBOARD_APPOINTMENTS_PROVIDER_KEY": "Fournisseur",
+  "DASHBOARD_APPOINTMENTS_STATUS_KEY": "Statut",
+  "DASHBOARD_PAST_APPOINTMENTS_KEY": "Rendez-vous passés",
+  "DASHBOARD_UPCOMING_APPOINTMENTS_KEY": "Prochains rendez-vous",
+  "DASHBOARD_UPCOMING_APPOINTMENTS_KEY_LINK": "Vue en liste",
+  "DASHBOARD_NO_PAST_APPOINTMENTS_KEY": "Aucun rendez-vous passé",
+  "DASHBOARD_NO_UPCOMING_APPOINTMENTS_KEY": "Aucun rendez-vous à venir"
 }
