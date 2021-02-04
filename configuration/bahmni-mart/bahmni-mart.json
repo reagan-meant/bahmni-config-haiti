@@ -1,0 +1,171 @@
+{
+  "jobs": [{
+      "name": "Visits",
+      "type": "customSql",
+      "readerSql": "SELECT visit.visit_id AS visit_id, visit.patient_id AS patient_id, visit.visit_type_id AS visit_type_id, visit.date_started AS date_started, visit.date_stopped AS date_stopped, visit.indication_concept_id AS indication_concept_id, visit.location_id AS location_id, visit.voided AS visit_voided, visit.uuid AS visit_uuid, person.person_id AS person_id, row_number() over(partition by visit.patient_id) as number_occurences, person.gender AS gender, person.birthdate AS birthdate, person.birthdate_estimated AS birthdate_estimated, CASE WHEN datediff(visit.date_started, person.birthdate)/365 < 1 THEN '0 - 1' WHEN datediff(visit.date_started, person.birthdate)/365 BETWEEN 1 AND 4 THEN '1 - 4' WHEN datediff(visit.date_started, person.birthdate)/365 BETWEEN 4 AND 9 THEN '5 - 9' WHEN datediff(visit.date_started, person.birthdate)/365 BETWEEN 10 AND 14 THEN '10 - 14' WHEN datediff(visit.date_started, person.birthdate)/365 BETWEEN 15 AND 19 THEN '15 - 19' WHEN datediff(visit.date_started, person.birthdate)/365 BETWEEN 20 AND 24 THEN '20 - 24' WHEN datediff(visit.date_started, person.birthdate)/365 > 24 THEN '25+' ELSE 'Invalid birthdate' END AS 'age_at_visit_group_profile_1', datediff(visit.date_started, person.birthdate)/365 as age_at_visit, person.dead AS dead, person.death_date AS death_date, person.cause_of_death AS cause_of_death, person.voided AS person_voided, person.uuid AS person_uuid FROM visit LEFT JOIN person person ON visit.patient_id = person.person_id",
+      "tableName": "visits",
+      "incrementalUpdateConfig": {
+        "updateOn": "visit_id",
+        "eventCategory": "visit",
+        "openmrsTableName": "visit"
+      }
+    },
+    {
+      "name": "Concepts",
+      "type": "customSql",
+      "readerSql": "SELECT `concept`.`concept_id` AS `concept_id`, `concept_reference_source`.`name` AS `Concept Mapping Source`, `concept_reference_term`.`code` AS `Concept Mapping Code`, `concept_reference_term`.`name` AS `Concept Mapping Name`, `concept_name`.`name` AS `name`, `concept_name`.`locale` AS `locale`, `concept_name`.`locale_preferred` AS `locale_preferred`, `concept`.`retired` AS `retired`, `concept`.`uuid` AS `uuid` FROM `concept` LEFT JOIN `concept_reference_map` `concept_reference_map` ON `concept`.`concept_id` = `concept_reference_map`.`concept_id` LEFT JOIN `concept_reference_term` `concept_reference_term` ON `concept_reference_map`.`concept_reference_term_id` = `concept_reference_term`.`concept_reference_term_id` LEFT JOIN `concept_reference_source` `concept_reference_source` ON `concept_reference_term`.`concept_source_id` = `concept_reference_source`.`concept_source_id` LEFT JOIN `concept_name` `concept_name` ON `concept`.`concept_id` = `concept_name`.`concept_id`",
+      "tableName": "concepts",
+      "incrementalUpdateConfig": {
+        "updateOn": "concept_id",
+        "eventCategory": "concept",
+        "openmrsTableName": "concept"
+      }
+    },
+    {
+      "name": "Form2 Obs Data",
+      "type": "form2obs",
+      "incrementalUpdateConfig": {
+        "updateOn": "encounter_id",
+        "eventCategory": "Encounter",
+        "openmrsTableName": "encounter"
+      },
+      "separateTableConfig": {
+        "enableForAddMoreAndMultiSelect": true,
+        "separateTables": []
+      },
+      "conceptReferenceSource": "",
+      "ignoreAllFreeTextConcepts": true,
+      "columnsToIgnore": [
+        "Image"
+      ]
+    },
+    {
+      "name": "Patients",
+      "type": "patients",
+      "chunkSizeToRead": "500"
+    },
+    {
+      "name": "Appointments",
+      "type": "appointments",
+      "chunkSizeToRead": "500",
+      "groupedJobConfigs": [{
+        "tableName": "appointment_service_default",
+        "columnsToIgnore": []
+      }]
+    },
+    {
+      "name": "Location",
+      "type": "location",
+      "chunkSizeToRead": "500"
+    },
+    {
+      "name": "Person",
+      "type": "person",
+      "chunkSizeToRead": "500",
+      "groupedJobConfigs": [{
+          "tableName": "person_attributes",
+          "columnsToIgnore": [
+            "primaryContact",
+            "secondaryContact",
+            "primaryRelative",
+            "familyNameLocal",
+            "givenNameLocal",
+            "middleNameLocal"
+          ]
+        },
+        {
+          "tableName": "person_details_default",
+          "columnsToIgnore": [
+            "prefix",
+            "given_name",
+            "middle_name",
+            "family_name_prefix",
+            "family_name",
+            "family_name2",
+            "family_name_suffix"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Visits And Encounters",
+      "type": "visitsAndEncounters",
+      "chunkSizeToRead": "500"
+    },
+    {
+      "name": "Medication And Orders",
+      "type": "medicationAndOrders",
+      "chunkSizeToRead": "500",
+      "groupedJobConfigs": [{
+        "tableName": "medication_data_default",
+        "columnsToIgnore": [
+          "instructions",
+          "stop_notes"
+        ]
+      }]
+    },
+    {
+      "name": "Diagnoses And Conditions",
+      "type": "diagnosesAndConditions",
+      "chunkSizeToRead": "500"
+    },
+    {
+      "name": "MetaData Dictionary",
+      "type": "metadata",
+      "conceptReferenceSource": ""
+    },
+    {
+      "name": "Obs Data",
+      "type": "obs",
+      "incrementalUpdateConfig": {
+        "updateOn": "encounter_id",
+        "eventCategory": "Encounter",
+        "openmrsTableName": "encounter"
+      },
+      "separateTableConfig": {
+        "enableForAddMoreAndMultiSelect": true,
+        "separateTables": []
+      },
+      "conceptReferenceSource": "",
+      "ignoreAllFreeTextConcepts": true,
+      "columnsToIgnore": [
+        "Image",
+        "Video"
+      ]
+    }
+  ],
+  "procedures": [{
+      "name": "Discharge Date Procedure",
+      "sourceFilePath": "classpath:procedureSql/dischargeDateProc.sql"
+    },
+    {
+      "name": "Age Group Procedure",
+      "sourceFilePath": "classpath:procedureSql/ageGroupProc.sql"
+    }
+  ],
+  "views": [{
+      "name": "patient_visits_encounters_view",
+      "sourceFilePath": "classpath:viewSql/patientVisitsEncountersView.sql"
+    },
+    {
+      "name": "appointment_admin_panel_view",
+      "sql": "SELECT * FROM appointment_service_default LEFT OUTER JOIN service_availability_default USING (appointment_service_id, service_name)"
+    },
+    {
+      "name": "patient_details_view",
+      "sourceFilePath": "classpath:viewSql/patientDetailsView.sql"
+    },
+    {
+      "name": "patient_information_view",
+      "sourceFilePath": "classpath:viewSql/patientInformationView.sql"
+    },
+    {
+      "name": "patient_appointment_view",
+      "sourceFilePath": "classpath:viewSql/patientAppointmentView.sql"
+    },
+    {
+      "name": "patient_diagnosis_condition_view",
+      "sourceFilePath": "classpath:viewSql/patientDiagnosisConditionView.sql"
+    }
+  ]
+}
