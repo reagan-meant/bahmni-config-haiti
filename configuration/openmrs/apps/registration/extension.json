@@ -49,7 +49,7 @@
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
         "type": "forms",
         "extensionParams": {
-            "formName": "Vital Signs",
+            "formName": "Signes vitaux",
             "conceptNames": ["Weight","Height", "Blood Pressure Set", "Pulse", "Temperature", "Respiratory Rate", "Oxygen Saturation", "Mid-Upper Arm Circumference"],
             "required":true,
             "showLatest": true
